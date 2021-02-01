@@ -69,6 +69,12 @@ const Grid = styled.div`
 export default function Projects() {
   const projects = [
     {
+      projectName: 'Storybook Components',
+      img: '/projects/storybook-components.png',
+      github: 'https://github.com/KristianDunne/storybook-ui-components',
+      live: 'https://storybook-ui-components.kristiandunne.vercel.app/',
+    },
+    {
       projectName: 'Sign Up Form',
       img: '/projects/sign-up-form.png',
       github: 'https://github.com/KristianDunne/sign-up-form-challenge',
