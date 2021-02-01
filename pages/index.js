@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Hero from '../components/feature/hero/';
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
         <title>Kristian Dunne</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Hero></Hero>
     </div>
   );
 }
