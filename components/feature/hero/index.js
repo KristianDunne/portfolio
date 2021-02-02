@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
   display: flex;
@@ -42,7 +43,28 @@ export default function Hero() {
   return (
     <Container>
       <HeroText>
-        <Title>Hey!</Title>
+        <Title>
+          Hey,
+          <motion.div
+            style={{
+              marginBottom: '-20px',
+              marginRight: '-45px',
+              paddingBottom: '20px',
+              paddingRight: '45px',
+              display: 'inline-block',
+              paddingLeft: '16px',
+            }}
+            animate={{ rotate: 60 }}
+            transition={{
+              yoyo: 3,
+              from: 0,
+              duration: 0.8,
+              ease: 'easeInOut',
+              type: 'tween',
+            }}>
+            👋
+          </motion.div>
+        </Title>
         <SubTitle>I'm Kristian.</SubTitle>
         <Introduction>I love bringing beautiful UIs to life with code.</Introduction>
       </HeroText>
