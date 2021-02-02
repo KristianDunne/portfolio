@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
   display: flex;
@@ -120,58 +121,60 @@ export default function Projects() {
           const { projectName, img, github, live } = project;
 
           return (
-            <Card>
-              <ProjectName>{projectName}</ProjectName>
-              <Link href={live}>
-                <a target="_blank">
-                  <Image src={img} width={641} height={401} />
-                </a>
-              </Link>
-              <Links>
-                <LinkItem>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    width="1rem"
-                    height="1rem">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                    />
-                  </svg>
-                  <LinkItemLabel>
-                    <Link href={github}>
-                      <a target="_blank">Code</a>
-                    </Link>
-                  </LinkItemLabel>
-                </LinkItem>
-                <LinkItem>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    width="1rem"
-                    height="1rem">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <LinkItemLabel>
-                    <Link href={live}>
-                      <a target="_blank">Live</a>
-                    </Link>
-                  </LinkItemLabel>
-                </LinkItem>
-              </Links>
-            </Card>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Card>
+                <ProjectName>{projectName}</ProjectName>
+                <Link href={live}>
+                  <a target="_blank">
+                    <Image src={img} width={641} height={401} />
+                  </a>
+                </Link>
+                <Links>
+                  <LinkItem>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      width="1rem"
+                      height="1rem">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                      />
+                    </svg>
+                    <LinkItemLabel>
+                      <Link href={github}>
+                        <a target="_blank">Code</a>
+                      </Link>
+                    </LinkItemLabel>
+                  </LinkItem>
+                  <LinkItem>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      width="1rem"
+                      height="1rem">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <LinkItemLabel>
+                      <Link href={live}>
+                        <a target="_blank">Live</a>
+                      </Link>
+                    </LinkItemLabel>
+                  </LinkItem>
+                </Links>
+              </Card>
+            </motion.div>
           );
         })}
       </Grid>
