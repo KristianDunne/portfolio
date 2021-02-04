@@ -82,6 +82,12 @@ export default function Projects() {
       live: 'https://sign-up-form-challenge.kristiandunne.vercel.app/',
     },
     {
+      projectName: 'ArtStation Concept App',
+      img: '/projects/artstation-app.png',
+      github: 'https://github.com/KristianDunne/art-station-app',
+      live: 'https://snack.expo.io/@kristiandunne/art-station',
+    },
+    {
       projectName: 'Single Price Grid Component',
       img: '/projects/single-price-grid-component.png',
       github: 'https://github.com/KristianDunne/single-price-grid-component',
