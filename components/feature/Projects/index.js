@@ -127,7 +127,7 @@ export default function Projects() {
           const { projectName, img, github, live } = project;
 
           return (
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div whileHover={{ scale: 1.1 }}>
               <Card>
                 <ProjectName>{projectName}</ProjectName>
                 <Link href={live}>
