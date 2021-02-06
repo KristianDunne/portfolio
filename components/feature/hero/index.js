@@ -21,7 +21,7 @@ const Avatar = styled.div`
   justify-content: flex-end;
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
   font-style: normal;
   font-weight: bold;
   font-size: 3rem;
@@ -66,7 +66,9 @@ export default function Hero() {
           </motion.div>
         </Title>
         <SubTitle>I'm Kristian.</SubTitle>
-        <Introduction>I love bringing beautiful UIs to life with code.</Introduction>
+        <Introduction>
+          Frontend developer who loves bringing great user experiences to life with code.
+        </Introduction>
       </HeroText>
       <Avatar>
         <Image
