@@ -44,11 +44,27 @@ const bounceTransition = {
   },
 };
 
+const MailLink = styled.a`
+  text-decoration: underline;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    color: #000000;
+  }
+`;
+
 export default function Footer() {
   return (
     <Container>
       <Title>Let's connect!</Title>
-      <Email>You can email me directly at KristianDunne@iCloud.com</Email>
+      <Email>
+        You can email me directly at{' '}
+        <Link href="mailto:https://twitter.com/KristianDunne_" passHref>
+          <MailLink>KristianDunne@iCloud.com</MailLink>
+        </Link>
+      </Email>
       <Socials>
         <SocialItem>
           <Link href="https://github.com/KristianDunne">
