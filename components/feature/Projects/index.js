@@ -120,7 +120,7 @@ export default function Projects() {
   ];
 
   return (
-    <Container>
+    <Container role="main">
       <Title>Projects</Title>
       <Grid>
         {projects.map((project) => {

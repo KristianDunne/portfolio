@@ -13,6 +13,7 @@ export default function Home() {
       <Hero></Hero>
       <Projects></Projects>
       <Footer></Footer>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
     </div>
   );
 }
