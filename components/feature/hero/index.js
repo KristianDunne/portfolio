@@ -69,7 +69,14 @@ export default function Hero() {
         <Introduction>I love bringing beautiful UIs to life with code.</Introduction>
       </HeroText>
       <Avatar>
-        <Image className="avatar" src="/me.jpg" width={170} height={170} />
+        <Image
+          className="avatar"
+          src="/me.jpg"
+          width={170}
+          height={170}
+          alt="My Avatar"
+          role="presentation"
+        />
         <style jsx global>{`
           .avatar {
             border-radius: 50%;

@@ -59,7 +59,12 @@ export default function Footer() {
                 animate={{
                   y: ['25%', '-25%'],
                 }}>
-                <Image src="/icons/github.svg" width={24} height={24}></Image>
+                <Image
+                  src="/icons/github.svg"
+                  width={24}
+                  height={24}
+                  alt="GitHub"
+                  role="presentation"></Image>
               </motion.span>
             </a>
           </Link>
@@ -73,7 +78,12 @@ export default function Footer() {
                 animate={{
                   y: ['25%', '-25%'],
                 }}>
-                <Image src="/icons/twitter.svg" width={24} height={24}></Image>
+                <Image
+                  src="/icons/twitter.svg"
+                  width={24}
+                  height={24}
+                  alt="Twitter"
+                  role="presentation"></Image>
               </motion.span>
             </a>
           </Link>

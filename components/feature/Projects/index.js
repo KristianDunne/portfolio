@@ -132,7 +132,13 @@ export default function Projects() {
                 <ProjectName>{projectName}</ProjectName>
                 <Link href={live}>
                   <a target="_blank">
-                    <Image src={img} width={641} height={401} />
+                    <Image
+                      src={img}
+                      width={641}
+                      height={401}
+                      alt={projectName}
+                      role="presentation"
+                    />
                   </a>
                 </Link>
                 <Links>
