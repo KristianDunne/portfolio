@@ -70,48 +70,56 @@ const Grid = styled.div`
 export default function Projects() {
   const projects = [
     {
+      id: 1,
       projectName: 'Storybook Components',
       img: '/projects/storybook-components.png',
       github: 'https://github.com/KristianDunne/storybook-ui-components',
       live: 'https://storybook-ui-components.kristiandunne.vercel.app/',
     },
     {
+      id: 2,
       projectName: 'Sign Up Form',
       img: '/projects/sign-up-form.png',
       github: 'https://github.com/KristianDunne/sign-up-form-challenge',
       live: 'https://sign-up-form-challenge.kristiandunne.vercel.app/',
     },
     {
+      id: 3,
       projectName: 'ArtStation Concept App',
       img: '/projects/artstation-app.png',
       github: 'https://github.com/KristianDunne/art-station-app',
       live: 'https://snack.expo.io/@kristiandunne/art-station',
     },
     {
+      id: 4,
       projectName: 'Single Price Grid Component',
       img: '/projects/single-price-grid-component.png',
       github: 'https://github.com/KristianDunne/single-price-grid-component',
       live: 'https://single-price-grid-component.kristiandunne.vercel.app/',
     },
     {
+      id: 5,
       projectName: 'Ping Coming Soon Page',
       img: '/projects/ping-coming-soon-page.png',
       github: 'https://github.com/KristianDunne/ping-coming-soon-page',
       live: 'https://ping-coming-soon-page.kristiandunne.vercel.app/',
     },
     {
+      id: 6,
       projectName: 'Huddle Landing Page',
       img: '/projects/huddle-landing-page.png',
       github: 'https://github.com/KristianDunne/huddle-landing-page',
       live: 'https://huddle-landing-page.kristiandunne.vercel.app/',
     },
     {
+      id: 7,
       projectName: 'Profile Card Component',
       img: '/projects/profile-card-component.png',
       github: 'https://github.com/KristianDunne/profile-card-component',
       live: 'https://profile-card-component.kristiandunne.vercel.app/',
     },
     {
+      id: 8,
       projectName: 'GitHub Jobs App (WIP)',
       img: '/projects/github-jobs-app.png',
       github: 'https://github.com/KristianDunne/github-jobs-app',
@@ -124,10 +132,10 @@ export default function Projects() {
       <Title>Projects</Title>
       <Grid>
         {projects.map((project) => {
-          const { projectName, img, github, live } = project;
+          const { projectName, img, github, live, id } = project;
 
           return (
-            <motion.div whileHover={{ scale: 1.1 }}>
+            <motion.div whileHover={{ scale: 1.1 }} key={id}>
               <Card>
                 <ProjectName>{projectName}</ProjectName>
                 <Link href={live} rel="noreferrer">
