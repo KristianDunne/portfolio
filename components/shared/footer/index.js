@@ -61,13 +61,13 @@ export default function Footer() {
       <Title>Let's connect!</Title>
       <Email>
         You can email me directly at{' '}
-        <Link href="mailto:https://twitter.com/KristianDunne_" passHref>
+        <Link href="mailto:https://twitter.com/KristianDunne_" passHref rel="noreferrer">
           <MailLink>KristianDunne@iCloud.com</MailLink>
         </Link>
       </Email>
       <Socials>
         <SocialItem>
-          <Link href="https://github.com/KristianDunne">
+          <Link href="https://github.com/KristianDunne" rel="noreferrer">
             <a target="_blank">
               <motion.span
                 style={ballStyle}
@@ -86,7 +86,7 @@ export default function Footer() {
           </Link>
         </SocialItem>
         <SocialItem>
-          <Link href="https://twitter.com/KristianDunne_">
+          <Link href="https://twitter.com/KristianDunne_" rel="noreferrer">
             <a target="_blank">
               <motion.span
                 style={ballStyle}

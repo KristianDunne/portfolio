@@ -130,7 +130,7 @@ export default function Projects() {
             <motion.div whileHover={{ scale: 1.1 }}>
               <Card>
                 <ProjectName>{projectName}</ProjectName>
-                <Link href={live}>
+                <Link href={live} rel="noreferrer">
                   <a target="_blank">
                     <Image
                       src={img}
@@ -158,7 +158,7 @@ export default function Projects() {
                       />
                     </svg>
                     <LinkItemLabel>
-                      <Link href={github}>
+                      <Link href={github} rel="noreferrer">
                         <a target="_blank">Code</a>
                       </Link>
                     </LinkItemLabel>
@@ -179,7 +179,7 @@ export default function Projects() {
                       />
                     </svg>
                     <LinkItemLabel>
-                      <Link href={live}>
+                      <Link href={live} rel="noreferrer">
                         <a target="_blank">Live</a>
                       </Link>
                     </LinkItemLabel>
