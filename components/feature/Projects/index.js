@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+import useSWR from 'swr';
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -67,84 +69,45 @@ const Grid = styled.div`
   }
 `;
 
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
 export default function Projects() {
-  const projects = [
-    {
-      id: 1,
-      projectName: 'Storybook Components',
-      img: '/projects/storybook-components.png',
-      github: 'https://github.com/KristianDunne/storybook-ui-components',
-      live: 'https://storybook-ui-components.kristiandunne.vercel.app/',
-    },
-    {
-      id: 2,
-      projectName: 'Sign Up Form',
-      img: '/projects/sign-up-form.png',
-      github: 'https://github.com/KristianDunne/sign-up-form-challenge',
-      live: 'https://sign-up-form-challenge.kristiandunne.vercel.app/',
-    },
-    {
-      id: 3,
-      projectName: 'ArtStation Concept App',
-      img: '/projects/artstation-app.png',
-      github: 'https://github.com/KristianDunne/art-station-app',
-      live: 'https://snack.expo.io/@kristiandunne/art-station',
-    },
-    {
-      id: 4,
-      projectName: 'Single Price Grid Component',
-      img: '/projects/single-price-grid-component.png',
-      github: 'https://github.com/KristianDunne/single-price-grid-component',
-      live: 'https://single-price-grid-component.kristiandunne.vercel.app/',
-    },
-    {
-      id: 5,
-      projectName: 'Ping Coming Soon Page',
-      img: '/projects/ping-coming-soon-page.png',
-      github: 'https://github.com/KristianDunne/ping-coming-soon-page',
-      live: 'https://ping-coming-soon-page.kristiandunne.vercel.app/',
-    },
-    {
-      id: 6,
-      projectName: 'Huddle Landing Page',
-      img: '/projects/huddle-landing-page.png',
-      github: 'https://github.com/KristianDunne/huddle-landing-page',
-      live: 'https://huddle-landing-page.kristiandunne.vercel.app/',
-    },
-    {
-      id: 7,
-      projectName: 'Profile Card Component',
-      img: '/projects/profile-card-component.png',
-      github: 'https://github.com/KristianDunne/profile-card-component',
-      live: 'https://profile-card-component.kristiandunne.vercel.app/',
-    },
-    {
-      id: 8,
-      projectName: 'GitHub Jobs App (WIP)',
-      img: '/projects/github-jobs-app.png',
-      github: 'https://github.com/KristianDunne/github-jobs-app',
-      live: 'https://github-jobs-app.kristiandunne.vercel.app/',
-    },
-  ];
+  const { data, error } = useSWR('http://strapi.kristiandunne.uk/projects', fetcher);
+
+  if (error)
+    return (
+      <Container role="main">
+        <Title>Ooops... Couldn't load projects</Title>
+      </Container>
+    );
+
+  if (!data)
+    return (
+      <Container role="main">
+        <Title>Fetching Projects...</Title>
+      </Container>
+    );
 
   return (
     <Container role="main">
       <Title>Projects</Title>
       <Grid>
-        {projects.map((project) => {
-          const { projectName, img, github, live, id } = project;
+        {data.map((project) => {
+          const { Name, Code, Live, id } = project;
+
+          const imgUrl = project.Image[0].url;
 
           return (
             <motion.div whileHover={{ scale: 1.1 }} key={id}>
               <Card>
-                <ProjectName>{projectName}</ProjectName>
-                <Link href={live} rel="noreferrer">
+                <ProjectName>{Name}</ProjectName>
+                <Link href={Live} rel="noreferrer">
                   <a target="_blank">
                     <Image
-                      src={img}
+                      src={`http://strapi.kristiandunne.uk${imgUrl}`}
                       width={641}
                       height={401}
-                      alt={projectName}
+                      alt={Name}
                       role="presentation"
                     />
                   </a>
@@ -166,7 +129,7 @@ export default function Projects() {
                       />
                     </svg>
                     <LinkItemLabel>
-                      <Link href={github} rel="noreferrer">
+                      <Link href={Code} rel="noreferrer">
                         <a target="_blank">Code</a>
                       </Link>
                     </LinkItemLabel>
@@ -187,7 +150,7 @@ export default function Projects() {
                       />
                     </svg>
                     <LinkItemLabel>
-                      <Link href={live} rel="noreferrer">
+                      <Link href={Live} rel="noreferrer">
                         <a target="_blank">Live</a>
                       </Link>
                     </LinkItemLabel>
