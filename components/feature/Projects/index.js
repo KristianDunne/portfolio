@@ -72,7 +72,7 @@ const Grid = styled.div`
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function Projects() {
-  const { data, error } = useSWR('http://strapi.kristiandunne.uk/projects', fetcher);
+  const { data, error } = useSWR('https://strapi.kristiandunne.uk/projects', fetcher);
 
   if (error)
     return (
@@ -104,7 +104,7 @@ export default function Projects() {
                 <Link href={Live} rel="noreferrer">
                   <a target="_blank">
                     <Image
-                      src={`http://strapi.kristiandunne.uk${imgUrl}`}
+                      src={`https://strapi.kristiandunne.uk${imgUrl}`}
                       width={641}
                       height={401}
                       alt={Name}
